@@ -6,7 +6,6 @@
           v-model="drawer"
           app
           clipped
-          src="/assets/images/drawer-background.png"
         >
           <v-list dense rounded>
             <v-list-item link to="/">
