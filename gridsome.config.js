@@ -1,6 +1,6 @@
 module.exports = {
   siteName: 'Inputs',
-  siteDescription: 'A list of all opensource/proprietary inputs avaliable',
+  siteDescription: 'A list of all opensource/proprietary inputs available',
   siteUrl: 'https://inputs.fabioluciano.dev',
 
   templates: {
