@@ -1,92 +1,91 @@
 <template>
-  <div id="app">
-    <v-app id="inspire">
-      <v-app id="inspire">
-        <v-navigation-drawer
-          v-model="drawer"
-          app
-          clipped
-        >
-          <v-list dense rounded>
-            <v-list-item link to="/">
-              <v-list-item-action>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>
-                  Home
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item link to="/keyboard">
-              <v-list-item-action>
-                <v-icon>mdi-keyboard</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>
-                  Keyboards
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item link to="/switch">
-              <v-list-item-action>
-                <v-icon>mdi-cog</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>
-                  Switches
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item link to="/switch-type">
-              <v-list-item-action>
-                <v-icon>mdi-cog</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>
-                  Switch Types
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-navigation-drawer>
+  <v-app id="inspire">
+    <Header :menu_items="menu_items" />
+    <v-main class="grey lighten-3">
+      <v-container>
+        <v-row>
+          <!-- <v-col cols="2" class="hidden-sm-and-down">
+            <v-sheet rounded="lg">
+              <v-list color="transparent">
+                <v-list-item v-for="n in 5" :key="n" link>
+                  <v-list-item-content>
+                    <v-list-item-title> List Item {{ n }} </v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
 
-        <v-app-bar app clipped-left>
-          <v-app-bar-nav-icon
-            @click.stop="drawer = !drawer"
-          ></v-app-bar-nav-icon>
-          <v-toolbar-title>Inputs</v-toolbar-title>
-        </v-app-bar>
+                <v-divider class="my-2"></v-divider>
 
-        <v-main>
-          <v-container>
-            <slot />
-          </v-container>
-        </v-main>
-      </v-app>
-    </v-app>
-  </div>
+                <v-list-item link color="grey lighten-4">
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      Refresh
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
+            </v-sheet>
+          </v-col> -->
+
+          <v-col>
+            <v-container>
+              <v-row v-if="$context.title">
+                <v-col>
+                  <v-sheet>
+                    <h2 class="text-h2">{{ $context.title }}</h2>
+                  </v-sheet>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col>
+                  <v-sheet rounded="lg">
+                    <slot />
+                  </v-sheet>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+    <v-footer padless>
+      <v-col class="text-center" cols="12">
+        <v-btn plain href="/feed.xml" target="_blank">
+          <v-icon>mdi-rss</v-icon>
+          RSS
+        </v-btn>
+        <v-btn plain href="/sitemap.xml" target="_blank">
+          <v-icon>mdi-code-tags</v-icon>
+          Sitemap
+        </v-btn>
+      </v-col>
+    </v-footer>
+  </v-app>
 </template>
 
 <static-query>
 query {
   metadata {
-    siteName
+    siteName,
+    siteDescription
   }
 }
 </static-query>
 
 <script>
-export default {
-  data: () => ({
-    drawer: true,
-    group: null,
-  }),
+import Header from "~/components/layout/Header.vue";
 
-  watch: {
-    group() {
-      this.drawer = true;
-    },
+export default {
+  components: {
+    Header,
+  },
+  data: function() {
+    return {
+      menu_items: [
+        { title: "Home", icon: "mdi-home", link: "/" },
+        { title: "Keyboards", icon: "mdi-keyboard", link: "/keyboards" },
+        { title: "Switches", icon: "mdi-cog", link: "/switches" },
+      ],
+    };
   },
 };
 </script>

@@ -1,6 +1,5 @@
 <template>
   <Layout>
-    <h2 class="text-h2">Switches</h2>
     <v-card flat class="py-12">
       <v-card-text>
         <v-row align="center" justify="center">
@@ -65,6 +64,11 @@ import SwitchCard from "~/components/SwitchCard";
 export default {
   components: {
     SwitchCard,
+  },
+  metaInfo() {
+    return {
+      title: this.$context.title,
+    };
   },
   data() {
     return {
