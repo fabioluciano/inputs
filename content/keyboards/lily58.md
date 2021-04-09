@@ -1,15 +1,41 @@
 ---
 title: Lily58
+details:
+  keys: 58
+  oled: true
+  splitted: true
 switch_socket:
   - MX
-  - Choc
+  - Kailh
 images:
   - /assets/images/keyboard/lily58/1.jpg
   - /assets/images/keyboard/lily58/2.jpg
   - /assets/images/keyboard/lily58/3.webp
-keys: 58
-oled: true
-splitted: true
+components:
+  - component: Lily58 Split Keyboard PCB
+    required: true
+    quantity: 2
+    where_to_buy:
+      - url: https://keycapsss.com/keyboard-parts/pcb/71/lily58-pro-split-keyboard-pcb?c=14
+        store: Keycapsss
+  - component: SMD Diodes 1N4148W
+    required: true
+    quantity: 58
+    where_to_buy:
+      - url: https://www.aliexpress.com/item/200PCS-1N4148-1N4148WS-T4-1N4148W-SMD-0805-SOD-323-IN4148-0805-SOD323-Switching-Diode-new-and/32774047563.html?spm=a2g0o.cart.0.0.74333c00fty2j5
+        store: AliExpress
+  - component: Tactile reset switch
+    required: true
+    quantity: 2
+    where_to_buy:
+      - url: https://pt.aliexpress.com/item/32703078819.html?spm=a2g0o.cart.0.0.74333c00dVqFLu
+        store: AliExpress
+  - component: TRRS jack
+    required: true
+    quantity: 2
+    where_to_buy:
+      - url: https://pt.aliexpress.com/item/33029465106.html?spm=a2g0o.cart.0.0.74333c00dVqFLu
+        store: AliExpress
 ---
 
-Content
+A great splitted keyboard

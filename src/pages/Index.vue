@@ -1,5 +1,5 @@
 <template>
-  <Layout :show-logo="false">
+  <Layout>
     <v-container>
       <h2 class="text-h2">Keyboards</h2>
       <v-row dense>
@@ -48,6 +48,11 @@ import KeyboardCard from "~/components/KeyboardCard";
 export default {
   components: {
     KeyboardCard,
+  },
+  metaInfo() {
+    return {
+      title: "Home",
+    };
   },
 };
 </script>

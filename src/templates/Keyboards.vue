@@ -1,15 +1,15 @@
 <template>
-  <Layout :show-logo="false">
+  <Layout>
     <v-container>
       <v-row dense>
         <v-col
           cols="12"
           sm="3"
           md="3"
-          v-for="edge in $page.switchTypes.edges"
+          v-for="edge in $page.keyboards.edges"
           :key="edge.node.title"
         >
-          <SwitchTypeCard :switch_type="edge.node" />
+          <KeyboardCard :keyboard="edge.node" />
         </v-col>
       </v-row>
     </v-container>
@@ -18,12 +18,15 @@
 
 <page-query>
 query {
-  switchTypes: allSwitchType {
+  keyboards: allKeyboard {
     edges {
       node {
-        id,
         title,
-        path
+        path,
+        switch_socket {
+          id,
+          title
+        }
       }
     }
   }
@@ -31,10 +34,15 @@ query {
 </page-query>
 
 <script>
-import SwitchTypeCard from "~/components/SwitchTypeCard";
+import KeyboardCard from "~/components/KeyboardCard";
 export default {
   components: {
-    SwitchTypeCard,
+    KeyboardCard,
+  },
+  metaInfo() {
+    return {
+      title: this.$context.title,
+    };
   },
 };
 </script>

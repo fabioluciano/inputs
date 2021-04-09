@@ -6,7 +6,21 @@ module.exports = function (api) {
   })
 
   api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    createPage({
+      path: '/keyboards',
+      component: './src/templates/Keyboards.vue',
+      context: {
+        title: "Keyboards"
+      }
+    });
+
+    createPage({
+      path: '/switches',
+      component: './src/templates/Switches.vue',
+      context: {
+        title: "Switches"
+      }
+    });
   })
 
   api.chainWebpack((config, { isServer }) => {
