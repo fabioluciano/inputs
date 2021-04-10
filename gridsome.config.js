@@ -63,7 +63,7 @@ module.exports = {
     {
       use: '@gridsome/plugin-sitemap',
       options: {
-        include: ['/keyboard', '/keyboard/**',  '/switch', '/switch/**']
+        include: ['/keyboards', '/keyboards/**',  '/switches', '/switches/**']
       }
     },
     {
