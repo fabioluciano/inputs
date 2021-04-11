@@ -1,8 +1,12 @@
 <template>
   <Layout>
     <v-container>
-      <h2 class="text-h2">Keyboards</h2>
-      <v-row dense>
+      <v-row>
+        <v-col>
+          <h3 class="text-h3 grey--text text--darken-2 section-name">Keyboards</h3>
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col
           cols="12"
           sm="3"
@@ -11,6 +15,22 @@
           :key="edge.node.title"
         >
           <KeyboardCard :keyboard="edge.node" />
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <h3 class="text-h3 grey--text text--darken-2 section-name">Switches</h3>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col
+          cols="12"
+          sm="3"
+          md="3"
+          v-for="item in $page.switches.edges"
+          :key="item.node.title"
+        >
+          <SwitchCard :switch_obj="item.node" />
         </v-col>
       </v-row>
     </v-container>
@@ -31,11 +51,33 @@ query {
       }
     }
   }
-  switchTypes: allSwitchType {
+  switches: allSwitch {
     edges {
       node {
         id,
         title,
+        profile {
+          id,
+          title
+        },
+        socket { 
+          id,
+          title
+        },
+        brand {
+          id,
+          title
+        },
+        type {
+          id,
+          title
+        },
+        durability,
+        actuator_travel,
+        pre_travel,
+        initial_force,
+        actuation_force,
+        rgb_version,
         path
       }
     }
@@ -45,9 +87,11 @@ query {
 
 <script>
 import KeyboardCard from "~/components/KeyboardCard";
+import SwitchCard from "~/components/SwitchCard";
 export default {
   components: {
     KeyboardCard,
+    SwitchCard
   },
   metaInfo() {
     return {
@@ -56,3 +100,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.section-name {
+  font-family: 'Noto Sans', sans-serif !important;
+}
+</style>

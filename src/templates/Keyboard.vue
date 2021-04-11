@@ -3,20 +3,20 @@
     <v-container>
       <v-row>
         <v-col>
-          <h2 class="text-h2">
+          <h2 class="text-h2 section-name grey--text text--darken-2">
             {{ $page.keyboard.title }}
           </h2>
         </v-col>
       </v-row>
-      <v-row>
+      <v-rows v-if="$page.keyboard.details">
         <v-col>
-          <h3 class="text-h3 mb-3">Details</h3>
-          <KeyboardDetails :components="$page.keyboard.details" />
+          <h3 class="text-h3 mb-5 section-name grey--text text--darken-2">Details</h3>
+          <KeyboardDetails :details="$page.keyboard.details" />
         </v-col>
-      </v-row>
+      </v-rows>
       <v-row v-if="$page.keyboard.components.length > 0">
         <v-col>
-          <h3 class="text-h3 mb-3">Components</h3>
+          <h3 class="text-h3 mb-5 section-name grey--text text--darken-2">Components</h3>
           <v-card outlined class="rounded-xl pa-2">
             <KeyboardComponentsTable :components="$page.keyboard.components" />
           </v-card>
@@ -44,7 +44,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$page.keyboard.title,
+      title: "Keyboard - " + this.$page.keyboard.title,
     };
   },
 };
@@ -56,6 +56,11 @@ query Keyboard ($id: ID!) {
     id,
     title,
     path,
+    details {
+      keys,
+      oled,
+      splitted
+    },
     switch_socket {
       id
       title
@@ -74,4 +79,8 @@ query Keyboard ($id: ID!) {
 }
 </page-query>
 
-<style lang="scss"></style>
+<style scoped>
+.section-name {
+  font-family: 'Noto Sans', sans-serif !important;
+}
+</style>

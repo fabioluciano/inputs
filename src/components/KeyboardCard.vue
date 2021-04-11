@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined tile :to="`${keyboard.path}`">
+  <v-card outlined :to="`${keyboard.path}`"  elevation="2">
     <v-card-title>
       {{ keyboard.title }}
     </v-card-title>
