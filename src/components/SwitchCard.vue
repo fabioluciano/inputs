@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined :to="`${switch_obj.path}`" class="rounded-xl" elevation="2">
+  <v-card outlined :to="`${switch_obj.path}`" elevation="2">
     <v-card-title>
       {{ switch_obj.title }}
     </v-card-title>

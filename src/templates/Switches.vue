@@ -1,19 +1,30 @@
 <template>
   <Layout>
-    <v-card flat class="py-12">
-      <v-card-text>
-        <v-row align="center" justify="center">
-          <v-btn-toggle v-model="group_switch_by" rounded>
-            <v-btn value="brand">Brand</v-btn>
-            <v-btn value="type">Type</v-btn>
-            <v-btn value="profile">Profile</v-btn>
-            <v-btn value="socket">Socket</v-btn>
-          </v-btn-toggle>
-        </v-row>
-      </v-card-text>
-    </v-card>
+    <v-container>
+      <v-row>
+        <v-col>
+          <h2 class="text-h2 grey--text text--darken-2 section-name">Switches</h2>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-card color="transparent" flat>
+            <v-card-text>
+              <v-row align="center" justify="center">
+                <v-btn-toggle v-model="group_switch_by" rounded>
+                  <v-btn value="brand">Brand</v-btn>
+                  <v-btn value="type">Type</v-btn>
+                  <v-btn value="profile">Profile</v-btn>
+                  <v-btn value="socket">Socket</v-btn>
+                </v-btn-toggle>
+              </v-row>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
     <v-container v-for="(group, groupName) in groups" :key="group.id">
-      <h2 class="text-h3 mb-3">{{ groupName | capitalize }}</h2>
+      <h3 class="text-h3 mb-3 group-name grey--text text--darken-2">{{ groupName | capitalize }}</h3>
       <v-row>
         <v-col sm="3" md="3" v-for="item in group" :key="item.id">
           <SwitchCard :switch_obj="item" />
@@ -103,3 +114,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.group-name, .section-name {
+  font-family: 'Noto Sans', sans-serif !important;
+}
+</style>

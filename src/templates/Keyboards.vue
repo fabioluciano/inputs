@@ -1,7 +1,12 @@
 <template>
   <Layout>
     <v-container>
-      <v-row dense>
+      <v-row>
+        <v-col>
+          <h2 class="text-h2 grey--text text--darken-2 section-name">Keyboards</h2>
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col
           cols="12"
           sm="3"
@@ -46,3 +51,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.section-name {
+  font-family: 'Noto Sans', sans-serif !important;
+}
+</style>
