@@ -1,6 +1,6 @@
 <template>
-  <v-sheet max-width="600">
-    <v-carousel class="rounded-xl">
+  <v-card flat>
+    <v-carousel>
       <v-carousel-item
         v-for="(item, i) in $page.keyboard.images"
         :key="i"
@@ -11,7 +11,7 @@
       >
       </v-carousel-item>
     </v-carousel>
-  </v-sheet>
+  </v-card>
 </template>
 
 <script>

@@ -1,18 +1,32 @@
 <template>
-  <v-card>
-    <v-container>
+  <v-container>
     <v-row>
       <v-col>
-        <dl class="row">
-          <template v-for="value, key in details">
-            <dt class="col-sm-3">{{ key }}</dt>
-            <dd class="col-sm-9">{{ value }}</dd>
-          </template>
-        </dl>
+        <table>
+          <tr>
+            <td class="detail-name" width=200>Number of Keys</td>
+            <td>{{ details.keys }}</td>
+          </tr>
+          <tr>
+            <td class="detail-name">Splitted</td>
+            <td>
+              <v-icon :color="details.splitted ? 'green' : 'red'">
+                {{ details.splitted ? "mdi-check-circle" : "mdi-close-circle" }}
+              </v-icon>
+            </td>
+          </tr>
+          <tr>
+            <td class="detail-name">OLED Support</td>
+            <td>
+              <v-icon :color="details.oled ? 'green' : 'red'">
+                {{ details.oled ? "mdi-check-circle" : "mdi-close-circle" }}
+              </v-icon>
+            </td>
+          </tr>
+        </table>
       </v-col>
     </v-row>
-    </v-container>
-  </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -27,3 +41,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.detail-name {
+  font-weight: 800;
+}
+</style>
