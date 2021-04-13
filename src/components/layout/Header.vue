@@ -4,7 +4,7 @@
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn v-for="item in menu_items" :key="item.name" :to="item.link" plain>
-        <v-icon>{{ item.icon }}</v-icon>
+        <v-icon left>{{ item.icon }}</v-icon>
         {{ item.title }}
       </v-btn>
     </v-toolbar-items>
