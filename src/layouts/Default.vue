@@ -5,29 +5,12 @@
       <v-container>
         <v-row>
           <v-col>
-            <v-container>
-              <v-row>
-                <v-col>
-                  <slot />
-                </v-col>
-              </v-row>
-            </v-container>
+            <slot />
           </v-col>
         </v-row>
       </v-container>
     </v-main>
-    <v-footer padless>
-      <v-col class="text-center" cols="12">
-        <v-btn plain href="/feed.xml" target="_blank">
-          <v-icon>mdi-rss</v-icon>
-          RSS
-        </v-btn>
-        <v-btn plain href="/sitemap.xml" target="_blank">
-          <v-icon>mdi-code-tags</v-icon>
-          Sitemap
-        </v-btn>
-      </v-col>
-    </v-footer>
+    <Footer />
   </v-app>
 </template>
 
@@ -42,17 +25,21 @@ query {
 
 <script>
 import Header from "~/components/layout/Header.vue";
+import Footer from "~/components/layout/Footer.vue";
 
 export default {
   components: {
     Header,
+    Footer,
   },
   data: function() {
     return {
       menu_items: [
         { title: "Home", icon: "mdi-home", link: "/" },
         { title: "Keyboards", icon: "mdi-keyboard", link: "/keyboards" },
+        { title: "Input Devices", icon: "mdi-mouse", link: "/input-devices" },
         { title: "Switches", icon: "mdi-cog", link: "/switches" },
+        { title: "About", icon: "mdi-help-circle", link: "/about" },
       ],
     };
   },
@@ -61,6 +48,6 @@ export default {
 
 <style scoped>
 .section-name {
-  font-family: 'Noto Sans', sans-serif !important;
+  font-family: "Noto Sans", sans-serif !important;
 }
 </style>

@@ -4,8 +4,17 @@ details:
   keys: 88
   oled: false
   splitted: false
-switch_socket:
-  - MX
+  license: Open Source
+  hotswappable: false
+  firmware:
+    - QMK
+  source:
+    repository: https://github.com/coseyfannitutti/mysterium
+    user:
+      name: Cosey Fannitutti
+      url: https://github.com/coseyfannitutti
+  switch_socket:
+    - MX
 images:
   - /assets/images/keyboard/mysterium/1.jpg
   - /assets/images/keyboard/mysterium/2.jpg
@@ -68,6 +77,13 @@ components:
   - component: 500mA Through-Hole Resettable Fuse (5.1mm)
     required: true
     quantity: 1
+buildlogs:
+  - url: https://static1.squarespace.com/static/5c533d33348cd92b886e544d/t/5faf630b1cc5cc6622868843/1605329678506/MYSTERIUM+V2+BUILD+GUIDE.pdf
+    language: english
+    type: pdf
+    author:
+      name: Cosey Fannitutti
+      url: https://github.com/coseyfannitutti
 ---
 
 A through-hole TKL keyboard with exposed components. Everything comes in a kit.

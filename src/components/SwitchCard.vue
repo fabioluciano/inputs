@@ -5,7 +5,16 @@
     </v-card-title>
 
     <v-card-text>
-      Type: {{ switch_obj.type.title }} Brand: {{ switch_obj.brand.title }}
+      <v-container>
+        <v-row dense>
+          <v-col>Type</v-col>
+          <v-col>{{ switch_obj.type.title }}</v-col>
+        </v-row>
+        <v-row dense>
+          <v-col>Brand</v-col>
+          <v-col>{{ switch_obj.brand.title }}</v-col>
+        </v-row>
+      </v-container>
     </v-card-text>
   </v-card>
 </template>

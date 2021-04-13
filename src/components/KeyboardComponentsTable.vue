@@ -3,16 +3,20 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left">Component</th>
-          <th class="text-left">Quantity</th>
-          <th class="text-left">Required</th>
-          <th class="text-left">Where to buy</th>
+          <th>Component Name</th>
+          <th>Quantity</th>
+          <th>Required</th>
+          <th>Where to buy</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="item in components" :key="item.component">
           <td>{{ item.component }}</td>
-          <td>{{ item.quantity }}</td>
+          <td>
+            <v-chip class="ma-2">
+              {{ item.quantity }}
+            </v-chip>
+          </td>
           <td>
             <v-simple-checkbox v-model="item.required" disabled />
           </td>
@@ -43,3 +47,9 @@ export default {
   props: ["components"],
 };
 </script>
+
+<style scoped>
+th {
+  font-size: 12pt !important;
+}
+</style>

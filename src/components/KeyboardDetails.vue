@@ -2,28 +2,130 @@
   <v-container>
     <v-row>
       <v-col>
-        <table>
-          <tr>
-            <td class="detail-name" width=200>Number of Keys</td>
-            <td>{{ details.keys }}</td>
-          </tr>
-          <tr>
-            <td class="detail-name">Splitted</td>
-            <td>
-              <v-icon :color="details.splitted ? 'green' : 'red'">
-                {{ details.splitted ? "mdi-check-circle" : "mdi-close-circle" }}
-              </v-icon>
-            </td>
-          </tr>
-          <tr>
-            <td class="detail-name">OLED Support</td>
-            <td>
-              <v-icon :color="details.oled ? 'green' : 'red'">
-                {{ details.oled ? "mdi-check-circle" : "mdi-close-circle" }}
-              </v-icon>
-            </td>
-          </tr>
-        </table>
+        <div class="keyboard-details">
+          <h4 class="text-h4 grey--text text--darken-2">
+            Details
+          </h4>
+          <v-container>
+            <v-row dense>
+              <v-col class="detail-name grey--text text--darken-2" sm="3" md="3"
+                >Number of Keys</v-col
+              >
+              <v-col>{{ keyboard.details.keys }}</v-col>
+            </v-row>
+            <v-row dense>
+              <v-col class="detail-name grey--text text--darken-2" sm="3" md="3"
+                >Splitted</v-col
+              >
+              <v-col>
+                <v-icon :color="keyboard.details.splitted ? 'green' : 'red'">
+                  {{
+                    keyboard.details.splitted
+                      ? "mdi-check-circle"
+                      : "mdi-close-circle"
+                  }}
+                </v-icon>
+              </v-col>
+            </v-row>
+            <v-row dense>
+              <v-col class="detail-name grey--text text--darken-2" sm="3" md="3"
+                >OLED Support</v-col
+              >
+              <v-col>
+                <v-icon :color="keyboard.details.oled ? 'green' : 'red'">
+                  {{
+                    keyboard.details.oled
+                      ? "mdi-check-circle"
+                      : "mdi-close-circle"
+                  }}
+                </v-icon>
+              </v-col>
+            </v-row>
+            <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="3"
+                md="3"
+              >
+                Hot-Swappable
+              </v-col>
+              <v-col>
+                <v-icon
+                  :color="keyboard.details.hotswappable ? 'green' : 'red'"
+                >
+                  {{
+                    keyboard.details.hotswappable
+                      ? "mdi-check-circle"
+                      : "mdi-close-circle"
+                  }}
+                </v-icon>
+              </v-col>
+            </v-row>
+            <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="3"
+                md="3"
+              >
+                License
+              </v-col>
+              <v-col>{{ keyboard.details.license }}</v-col>
+            </v-row>
+            <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="3"
+                md="3"
+              >
+                Switch Socket Compatibility
+              </v-col>
+              <v-col>{{ keyboard.details.switch_socket.join(", ") }}</v-col>
+            </v-row>
+          </v-container>
+        </div>
+        <div class="keyboard-description">
+          <h4 class="text-h4 grey--text text--darken-2">Description</h4>
+          <v-container>
+            <v-row>
+              <v-col>
+                <div v-html="keyboard.content" />
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+        <div class="keyboard-source" v-if="keyboard.details.source">
+          <h4 class="text-h4 grey--text text--darken-2">Keyboard Source</h4>
+          <v-container>
+            <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="3"
+                md="3"
+              >
+                Repository
+              </v-col>
+              <v-col>
+                <a :href="keyboard.details.source.repository" target="_blank">
+                  Link
+                </a>
+              </v-col>
+            </v-row>
+            <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="3"
+                md="3"
+              >
+                Mantained by
+              </v-col>
+              <v-col>
+                <a :href="keyboard.details.source.user.url" target="_blank">
+                  {{ keyboard.details.source.user.name }}
+                </a>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -31,7 +133,7 @@
 
 <script>
 export default {
-  props: ["details"],
+  props: ["keyboard"],
   filters: {
     capitalize: function(value) {
       if (!value) return "";
@@ -41,6 +143,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .detail-name {
   font-weight: 800;
