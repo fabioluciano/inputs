@@ -1,50 +1,43 @@
 <template>
-  <v-simple-table fixed-header>
-    <template v-slot:default>
-      <thead>
-        <tr>
-          <th>Component Name</th>
-          <th>Quantity</th>
-          <th>Required</th>
-          <th>Where to buy</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in components" :key="item.component">
-          <td>{{ item.component }}</td>
-          <td>
-            <v-chip class="ma-2">
-              {{ item.quantity }}
-            </v-chip>
-          </td>
-          <td>
-            <v-simple-checkbox v-model="item.required" disabled />
-          </td>
-          <td>
-            <v-tooltip top v-for="shop in item.where_to_buy" :key="shop.url">
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  icon
-                  :href="shop.url"
-                  target="_blank"
-                  v-bind="attrs"
-                  v-on="on"
-                >
-                  <v-icon>mdi-cart</v-icon>
-                </v-btn>
-              </template>
-              <span>{{ shop.store }}</span>
-            </v-tooltip>
-          </td>
-        </tr>
-      </tbody>
-    </template>
-  </v-simple-table>
+  <v-container>
+    <v-row>
+      <v-col
+        v-for="component in groupedComponents"
+        :key="component.id"
+      >
+       {{ component }}
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
   props: ["components"],
+  computed: {
+    groupedComponents() {
+      return this.groupByRevision(this.components);
+    },
+  },
+  methods: {
+    groupByRevision: function(components) {
+      const result = {};
+
+      components.forEach((item) => {
+        console.log(item.revision)
+        // if(typeof item.revision == "String") {
+        //   console.log(item.revision)
+        // } else if(typeof item.revision == "Object") {
+        //   console.log(item.revision)
+        // }
+        // console.log(typeof revision)
+        // if (!result[revisionName]) result[revisionName] = [];
+        // result[revisionName].push(item);
+      });
+
+      return result;
+    },
+  },
 };
 </script>
 

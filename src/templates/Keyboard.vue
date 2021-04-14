@@ -129,6 +129,7 @@ query Keyboard ($id: ID!) {
       component,
       quantity,
       required,
+      revision,
       where_to_buy {
         url,
         store

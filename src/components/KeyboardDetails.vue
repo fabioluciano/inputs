@@ -84,7 +84,7 @@
           </v-container>
         </div>
         <div class="keyboard-description">
-          <h4 class="text-h4 grey--text text--darken-2">Description</h4>
+          <h4 class="text-h4 mt-5 grey--text text--darken-2">Description</h4>
           <v-container>
             <v-row>
               <v-col>
@@ -94,7 +94,7 @@
           </v-container>
         </div>
         <div class="keyboard-source" v-if="keyboard.details.source">
-          <h4 class="text-h4 grey--text text--darken-2">Keyboard Source</h4>
+          <h4 class="text-h4 mt-5 grey--text text--darken-2">Keyboard Source</h4>
           <v-container>
             <v-row dense>
               <v-col
