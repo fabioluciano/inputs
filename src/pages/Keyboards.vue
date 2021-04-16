@@ -3,7 +3,9 @@
     <v-container>
       <v-row>
         <v-col>
-          <h2 class="text-h2 grey--text text--darken-2 section-name">Keyboards</h2>
+          <h2 class="text-h2 grey--text text--darken-2 section-name">
+            Keyboards
+          </h2>
         </v-col>
       </v-row>
       <v-row>
@@ -54,6 +56,6 @@ export default {
 
 <style scoped>
 .section-name {
-  font-family: 'Noto Sans', sans-serif !important;
+  font-family: "Noto Sans", sans-serif !important;
 }
 </style>

@@ -1,37 +1,37 @@
 <template>
   <v-container>
     <v-row>
-      <v-col
-        cols="12"
-        sm="3"
-        md="3"
-        v-for="buildlog in buildlogs"
-        :key="buildlog.url"
-      >
-        <v-card class="mx-auto" outlined>
-          <v-container>
-            <v-row dense>
-              <v-col class="detail-name">Author</v-col>
-              <v-col>
-                <a :href="buildlog.author.url" target="_blank">
-                  {{ buildlog.author.name }}
-                </a>
-              </v-col>
-            </v-row>
-            <v-row dense>
-              <v-col class="detail-name">Type</v-col>
-              <v-col>{{ buildlog.type }}</v-col>
-            </v-row>
-            <v-row dense>
-              <v-col class="detail-name">Buildlog</v-col>
-              <v-col>
-                <a :href="buildlog.url" target="_blank">
-                  Link
-                </a>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-card>
+      <v-col>
+        <v-list three-line>
+          <template v-for="buildlog in buildlogs">
+            <v-list-item
+              :key="buildlog.id"
+              :href="buildlog.url"
+              target="_blank"
+            >
+              <v-list-item-icon>
+                <v-icon>mdi-image</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-subtitle>
+                  <span class="font-weight-black">Revision</span>
+                  {{ buildlog.revision }}
+                  <v-spacer class="my-1" />
+                  <span class="font-weight-black">Language</span>
+                  {{ buildlog.language }}
+                  <v-spacer class="my-1" />
+                  <span class="font-weight-black">Type</span>
+                  {{ buildlog.type }}
+                  <v-spacer class="my-1" />
+                  <span class="font-weight-black">Author </span>
+                  <a :href="buildlog.author.url" target="_blank">{{
+                    buildlog.author.name
+                  }}</a>
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+        </v-list>
       </v-col>
     </v-row>
   </v-container>
@@ -42,9 +42,3 @@ export default {
   props: ["buildlogs"],
 };
 </script>
-
-<style scoped>
-.detail-name {
-  font-weight: 800;
-}
-</style>

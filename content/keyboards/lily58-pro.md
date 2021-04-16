@@ -11,13 +11,13 @@ details:
     user:
       name: Naoki Katahira
       url: https://github.com/kata0510
-  switch_socket:
-    - MX
-    - Choc
   revisions:
     - Pro
     - Classic
     - Lite
+switch_socket:
+  - MX
+  - Choc
 images:
   - /assets/images/keyboard/lily58/1.jpg
   - /assets/images/keyboard/lily58/2.jpg
@@ -34,6 +34,7 @@ components:
   - component: SMD Diodes 1N4148W
     revision:
       - Pro
+      - Lite
     required: true
     quantity: 58
     where_to_buy:
@@ -70,6 +71,7 @@ buildlogs:
     author:
       name: Nicell
       url: https://www.youtube.com/channel/UCSC-GHVIaXR6q66bxuB_0Kg
+diy_kits:
 ---
 
 Lily58 is 6\*4+4keys column-staggered split keyboard.
