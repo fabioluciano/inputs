@@ -8,6 +8,22 @@
           </h4>
           <v-container>
             <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="3"
+                md="3"
+              >
+                Revisions
+              </v-col>
+              <v-col>{{
+                keyboard.details.revisions
+                  .map(function(item) {
+                    return item;
+                  })
+                  .join(", ")
+              }}</v-col>
+            </v-row>
+            <v-row dense>
               <v-col class="detail-name grey--text text--darken-2" sm="3" md="3"
                 >Number of Keys</v-col
               >
@@ -79,10 +95,18 @@
               >
                 Switch Socket Compatibility
               </v-col>
-              <v-col>{{ keyboard.details.switch_socket.join(", ") }}</v-col>
+              <v-col>{{
+                keyboard.switch_socket
+                  .map(function(item) {
+                    return item.title;
+                  })
+                  .join(", ")
+              }}</v-col>
             </v-row>
           </v-container>
         </div>
+      </v-col>
+      <v-col>
         <div class="keyboard-description">
           <h4 class="text-h4 grey--text text--darken-2">Description</h4>
           <v-container>
@@ -94,7 +118,9 @@
           </v-container>
         </div>
         <div class="keyboard-source" v-if="keyboard.details.source">
-          <h4 class="text-h4 grey--text text--darken-2">Keyboard Source</h4>
+          <h4 class="text-h4 mt-4 grey--text text--darken-2">
+            Keyboard Source
+          </h4>
           <v-container>
             <v-row dense>
               <v-col

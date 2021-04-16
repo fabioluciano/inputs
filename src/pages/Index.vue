@@ -3,7 +3,9 @@
     <v-container>
       <v-row>
         <v-col>
-          <h3 class="text-h3 grey--text text--darken-2 section-name">Keyboards</h3>
+          <h3 class="text-h3 grey--text text--darken-2 section-name">
+            Keyboards
+          </h3>
         </v-col>
       </v-row>
       <v-row>
@@ -19,7 +21,9 @@
       </v-row>
       <v-row>
         <v-col>
-          <h3 class="text-h3 grey--text text--darken-2 section-name">Switches</h3>
+          <h3 class="text-h3 grey--text text--darken-2 section-name">
+            Switches
+          </h3>
         </v-col>
       </v-row>
       <v-row>
@@ -60,10 +64,6 @@ query {
           id,
           title
         },
-        socket { 
-          id,
-          title
-        },
         brand {
           id,
           title
@@ -91,7 +91,7 @@ import SwitchCard from "~/components/SwitchCard";
 export default {
   components: {
     KeyboardCard,
-    SwitchCard
+    SwitchCard,
   },
   metaInfo() {
     return {
@@ -103,6 +103,6 @@ export default {
 
 <style scoped>
 .section-name {
-  font-family: 'Noto Sans', sans-serif !important;
+  font-family: "Noto Sans", sans-serif !important;
 }
 </style>
