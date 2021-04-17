@@ -37,8 +37,9 @@ export default {
       menu_items: [
         { title: "Home", icon: "mdi-home", link: "/" },
         { title: "Keyboards", icon: "mdi-keyboard", link: "/keyboards" },
-        { title: "Input Devices", icon: "mdi-mouse", link: "/input-devices" },
         { title: "Switches", icon: "mdi-cog", link: "/switches" },
+        { title: "Keycaps", icon: "mdi-crop-landscape", link: "/keycaps" },
+        { title: "Input Devices", icon: "mdi-mouse", link: "/input-devices" },
         { title: "About", icon: "mdi-help-circle", link: "/about" },
       ],
     };

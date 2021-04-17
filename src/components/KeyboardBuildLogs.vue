@@ -13,7 +13,7 @@
                 <v-icon>mdi-image</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-subtitle>
+                <v-list-item-title>
                   <span class="font-weight-black">Revision</span>
                   {{ buildlog.revision }}
                   <v-spacer class="my-1" />
@@ -27,7 +27,7 @@
                   <a :href="buildlog.author.url" target="_blank">{{
                     buildlog.author.name
                   }}</a>
-                </v-list-item-subtitle>
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </template>

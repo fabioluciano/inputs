@@ -1,0 +1,34 @@
+site_url: https://inputs.fabioluciano.dev
+
+backend:
+  name: github
+  repo: fabioluciano/inputs
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "keyboards"
+    label: "Keyboards"
+    label_singular: "Keyboard"
+    folder: "content/keyboards"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Keyboard Name", name: "title", widget: "string" }
+      - {
+          label: "Number of Keys",
+          name: "details.keys",
+          widget: "number",
+          value_type: "int",
+        }
+
+      - { label: "Have OLED support?", name: "details.oled", widget: "boolean" }
+      - {
+          label: "Is a Splitted Keyboard?",
+          name: "details.splitted",
+          widget: "boolean",
+        }

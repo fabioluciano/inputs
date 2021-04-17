@@ -1,5 +1,5 @@
 ---
-title: Lily58 Pro
+title: Lily58
 details:
   keys: 58
   oled: true
@@ -72,6 +72,7 @@ buildlogs:
       name: Nicell
       url: https://www.youtube.com/channel/UCSC-GHVIaXR6q66bxuB_0Kg
 diy_kits:
+cases:
 ---
 
 Lily58 is 6\*4+4keys column-staggered split keyboard.
