@@ -3,7 +3,13 @@
     <v-toolbar-title>{{ $static.metadata.siteName }}</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn v-for="item in menu_items" :key="item.name" :to="item.link" plain>
+      <v-btn
+        v-for="item in menu_items"
+        :key="item.name"
+        :to="item.link"
+        plain
+        active-class="primary"
+      >
         <v-icon left>{{ item.icon }}</v-icon>
         {{ item.title }}
       </v-btn>
@@ -21,7 +27,7 @@
       />
     </v-responsive>
 
-    <v-menu bottom left>
+    <v-menu bottom left rounded="xl">
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on" class="hidden-md-and-up">
           <v-icon>mdi-dots-vertical</v-icon>
@@ -33,6 +39,7 @@
           v-for="item in menu_items"
           :key="item.link"
           :to="item.link"
+          active-class="primary"
         >
           <v-list-item-title>
             <v-icon>{{ item.icon }}</v-icon> {{ item.title }}

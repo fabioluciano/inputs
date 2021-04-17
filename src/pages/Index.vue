@@ -44,6 +44,7 @@
 <page-query>
 query {
   keyboards: allKeyboard {
+    totalCount,
     edges {
       node {
         title,
@@ -56,6 +57,7 @@ query {
     }
   }
   switches: allSwitch {
+    totalCount,
     edges {
       node {
         id,
