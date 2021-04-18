@@ -2,9 +2,9 @@
   <v-app id="inspire">
     <Header />
     <v-main class="grey lighten-3">
-      <v-container>
-        <v-row>
-          <v-col>
+      <v-container fill-height fluid>
+        <v-row align="center" justify="center">
+          <v-col cols="11">
             <slot />
           </v-col>
         </v-row>
@@ -33,7 +33,7 @@ export default {
     Footer,
   },
   data: function() {
-    return { };
+    return {};
   },
 };
 </script>
