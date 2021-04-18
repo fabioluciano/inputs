@@ -3,6 +3,9 @@ title: Mysterium
 details:
   keys: 88
   oled: false
+  leds:
+    perkey: false
+    glowing: false
   splitted: false
   keys_distribuition: Orthogonal
   license: Open Source
