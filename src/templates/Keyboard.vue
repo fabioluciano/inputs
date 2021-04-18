@@ -43,10 +43,13 @@
                 Components
               </v-tab>
               <v-tab
-                v-if="$page.keyboard.kits && $page.keyboard.kits.length > 0"
-                href="#kits"
+                v-if="
+                  $page.keyboard.diy_kits &&
+                  $page.keyboard.diy_kits.length > 0
+                "
+                href="#diy_kits"
               >
-                Kits
+                DIY Kits
               </v-tab>
               <v-tab
                 v-if="
@@ -81,6 +84,16 @@
               >
                 <KeyboardBuildLogs :buildlogs="$page.keyboard.buildlogs" />
               </v-tab-item>
+              <v-tab-item
+                v-if="
+                  $page.keyboard.diy_kits &&
+                    $page.keyboard.diy_kits.length > 0
+                "
+                class="py-5"
+                value="diy_kits"
+              >
+                <KeyboardDiyKits :diy_kits="$page.keyboard.diy_kits" />
+              </v-tab-item>
             </v-tabs>
           </v-card>
         </v-col>
@@ -98,6 +111,10 @@ query Keyboard ($id: ID!) {
     details {
       keys,
       oled,
+      leds {
+        perkey,
+        glowing
+      },
       splitted,
       keys_distribuition,
       license,
@@ -135,6 +152,12 @@ query Keyboard ($id: ID!) {
         store
       }
     },
+    diy_kits {
+      store,
+      url,
+      revision,
+      pre_assembled
+    },
     images,
     content
   }
@@ -145,12 +168,14 @@ query Keyboard ($id: ID!) {
 import KeyboardCarousel from "~/components/KeyboardCarousel";
 import KeyboardComponentsTable from "~/components/KeyboardComponentsTable";
 import KeyboardBuildLogs from "~/components/KeyboardBuildLogs";
+import KeyboardDiyKits from "~/components/KeyboardDiyKits";
 import KeyboardDetails from "~/components/KeyboardDetails";
 
 export default {
   components: {
     KeyboardComponentsTable,
     KeyboardBuildLogs,
+    KeyboardDiyKits,
     KeyboardDetails,
     KeyboardCarousel,
   },

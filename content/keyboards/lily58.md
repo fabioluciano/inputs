@@ -3,6 +3,9 @@ title: Lily58
 details:
   keys: 58
   oled: true
+  leds:
+    perkey: false
+    glowing: true
   splitted: true
   keys_distribuition: Staggered
   license: Open Source
@@ -16,6 +19,8 @@ details:
     - Pro
     - Classic
     - Lite
+    - SplitKB
+    - MysticMechs
 switch_socket:
   - MX
   - Choc
@@ -35,7 +40,6 @@ components:
   - component: SMD Diodes 1N4148W
     revision:
       - Pro
-      - Lite
     required: true
     quantity: 58
     where_to_buy:
@@ -49,7 +53,7 @@ components:
     where_to_buy:
       - url: https://pt.aliexpress.com/item/32703078819.html?spm=a2g0o.cart.0.0.74333c00dVqFLu
         store: AliExpress
-  - component: TRRS jack
+  - component: TRRS Jack
     revision:
       - Pro
     required: true
@@ -73,6 +77,39 @@ buildlogs:
       name: Nicell
       url: https://www.youtube.com/channel/UCSC-GHVIaXR6q66bxuB_0Kg
 diy_kits:
+    - store: KeyHive
+      url: https://keyhive.xyz/shop/lily58
+      revision: Pro
+      pre_assembled: false
+    - store: MechBoards
+      url: https://mechboards.co.uk/shop/kits/lily58-kit/
+      revision: Pro
+      pre_assembled: false
+    - store: LittleKeyboards
+      url: https://www.littlekeyboards.com/products/lily58-pro-pcb-kit
+      revision: Pro
+      pre_assembled: false
+    - store: MysticMechs
+      url: https://mysticmechs.com/products/lily58-pro-kit?variant=31711752159322
+      revision: MysticMechs
+      pre_assembled: false
+    - store: 42Keebs
+      url: https://42keebs.eu/shop/kits/lily58-split-ergo-50-kit-black/
+      revision: Pro
+      pre_assembled: false
+    - store: Yushakobo
+      url: https://shop.yushakobo.jp/products/lily58-pro
+      revision: Pro
+      pre_assembled: false
+    - store: SplitKB
+      url: https://splitkb.com/products/lily58-kb-pcb-kit
+      revision: SplitKB
+      pre_assembled: false
+    - store: BoardSource
+      url: https://boardsource.xyz/store/5ec9df84c6b834480de6c3d0
+      revision: Pro
+      pre_assembled: true
+
 cases:
 ---
 

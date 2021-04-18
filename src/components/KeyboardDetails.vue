@@ -10,8 +10,8 @@
             <v-row dense>
               <v-col
                 class="detail-name grey--text text--darken-2"
-                sm="3"
-                md="3"
+                sm="4"
+                lg="2"
               >
                 Revisions
               </v-col>
@@ -24,15 +24,49 @@
               }}</v-col>
             </v-row>
             <v-row dense>
-              <v-col class="detail-name grey--text text--darken-2" sm="3" md="3"
-                >Number of Keys</v-col
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="4"
+                lg="3"
               >
+                Number of Keys
+              </v-col>
               <v-col>{{ keyboard.details.keys }}</v-col>
             </v-row>
             <v-row dense>
-              <v-col class="detail-name grey--text text--darken-2" sm="3" md="3"
-                >Splitted</v-col
+              <v-col
+                sm="4"
+                lg="2"
+                class="detail-name grey--text text--darken-2"
               >
+                License
+              </v-col>
+              <v-col>{{ keyboard.details.license }}</v-col>
+            </v-row>
+            <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="5"
+                lg="4"
+              >
+                Switch Socket Compatibility
+              </v-col>
+              <v-col>{{
+                keyboard.switch_socket
+                  .map(function(item) {
+                    return item.title;
+                  })
+                  .join(", ")
+              }}</v-col>
+            </v-row>
+            <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="5"
+                lg="3"
+              >
+                Splitted
+              </v-col>
               <v-col>
                 <v-icon :color="keyboard.details.splitted ? 'green' : 'red'">
                   {{
@@ -46,17 +80,11 @@
             <v-row dense>
               <v-col
                 class="detail-name grey--text text--darken-2"
-                sm="3"
-                md="3"
+                sm="5"
+                lg="3"
               >
-                Keys Distribuition
+                OLED Support
               </v-col>
-              <v-col>{{ keyboard.details.keys_distribuition }}</v-col>
-            </v-row>
-            <v-row dense>
-              <v-col class="detail-name grey--text text--darken-2" sm="3" md="3"
-                >OLED Support</v-col
-              >
               <v-col>
                 <v-icon :color="keyboard.details.oled ? 'green' : 'red'">
                   {{
@@ -70,8 +98,8 @@
             <v-row dense>
               <v-col
                 class="detail-name grey--text text--darken-2"
-                sm="3"
-                md="3"
+                sm="5"
+                lg="3"
               >
                 Hot-Swappable
               </v-col>
@@ -90,28 +118,40 @@
             <v-row dense>
               <v-col
                 class="detail-name grey--text text--darken-2"
-                sm="3"
-                md="3"
+                sm="5"
+                lg="3"
               >
-                License
+                Per Key LEDS
               </v-col>
-              <v-col>{{ keyboard.details.license }}</v-col>
+              <v-col>
+                <v-icon :color="keyboard.details.leds.perkey ? 'green' : 'red'">
+                  {{
+                    keyboard.details.leds.perkey
+                      ? "mdi-check-circle"
+                      : "mdi-close-circle"
+                  }}
+                </v-icon>
+              </v-col>
             </v-row>
             <v-row dense>
               <v-col
                 class="detail-name grey--text text--darken-2"
-                sm="3"
-                md="3"
+                sm="5"
+                lg="3"
               >
-                Switch Socket Compatibility
+                Glowing LEDS
               </v-col>
-              <v-col>{{
-                keyboard.switch_socket
-                  .map(function(item) {
-                    return item.title;
-                  })
-                  .join(", ")
-              }}</v-col>
+              <v-col>
+                <v-icon
+                  :color="keyboard.details.leds.glowing ? 'green' : 'red'"
+                >
+                  {{
+                    keyboard.details.leds.glowing
+                      ? "mdi-check-circle"
+                      : "mdi-close-circle"
+                  }}
+                </v-icon>
+              </v-col>
             </v-row>
           </v-container>
         </div>
@@ -133,11 +173,7 @@
           </h4>
           <v-container>
             <v-row dense>
-              <v-col
-                class="detail-name grey--text text--darken-2"
-                sm="3"
-                md="3"
-              >
+              <v-col class="detail-name grey--text text--darken-2">
                 Repository
               </v-col>
               <v-col>
@@ -147,11 +183,7 @@
               </v-col>
             </v-row>
             <v-row dense>
-              <v-col
-                class="detail-name grey--text text--darken-2"
-                sm="3"
-                md="3"
-              >
+              <v-col class="detail-name grey--text text--darken-2">
                 Mantained by
               </v-col>
               <v-col>
