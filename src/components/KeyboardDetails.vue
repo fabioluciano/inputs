@@ -44,6 +44,16 @@
               </v-col>
             </v-row>
             <v-row dense>
+              <v-col
+                class="detail-name grey--text text--darken-2"
+                sm="3"
+                md="3"
+              >
+                Keys Distribuition
+              </v-col>
+              <v-col>{{ keyboard.details.keys_distribuition }}</v-col>
+            </v-row>
+            <v-row dense>
               <v-col class="detail-name grey--text text--darken-2" sm="3" md="3"
                 >OLED Support</v-col
               >

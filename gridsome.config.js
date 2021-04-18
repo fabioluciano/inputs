@@ -1,13 +1,13 @@
 module.exports = {
-  siteName: 'Inputs',
+  siteName: 'Input Device Hub',
   siteDescription: 'A list of all opensource/proprietary inputs available',
   siteUrl: 'https://inputs.fabioluciano.dev',
 
   templates: {
     Keyboard: '/keyboards/:title',
     Switch: '/switches/:title',
-    SwitchBrand: '/switch-brands/:title',
-    SwitchType: '/switch-types/:title'
+    SwitchType: '/switch-types/:title',
+    Pointer: '/pointer/:title'
   },
   plugins: [
     {
@@ -28,6 +28,13 @@ module.exports = {
       options: {
         typeName: 'SwitchType',
         path: 'content/switch-types/*.md',
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Pointer',
+        path: 'content/pointers/*.md',
       }
     },
     {

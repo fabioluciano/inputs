@@ -99,6 +99,7 @@ query Keyboard ($id: ID!) {
       keys,
       oled,
       splitted,
+      keys_distribuition,
       license,
       hotswappable,
       revisions,

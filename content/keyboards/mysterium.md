@@ -4,6 +4,7 @@ details:
   keys: 88
   oled: false
   splitted: false
+  keys_distribuition: Orthogonal
   license: Open Source
   hotswappable: false
   firmware:

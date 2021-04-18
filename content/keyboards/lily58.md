@@ -4,6 +4,7 @@ details:
   keys: 58
   oled: true
   splitted: true
+  keys_distribuition: Staggered
   license: Open Source
   hotswappable: true
   source:

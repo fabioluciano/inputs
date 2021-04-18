@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <Header :menu_items="menu_items" />
+    <Header />
     <v-main class="grey lighten-3">
       <v-container>
         <v-row>
@@ -33,16 +33,7 @@ export default {
     Footer,
   },
   data: function() {
-    return {
-      menu_items: [
-        { title: "Home", icon: "mdi-home", link: "/" },
-        { title: "Keyboards", icon: "mdi-keyboard", link: "/keyboards" },
-        { title: "Switches", icon: "mdi-cog", link: "/switches" },
-        { title: "Keycaps", icon: "mdi-crop-landscape", link: "/keycaps" },
-        { title: "Input Devices", icon: "mdi-mouse", link: "/input-devices" },
-        { title: "About", icon: "mdi-help-circle", link: "/about" },
-      ],
-    };
+    return { };
   },
 };
 </script>

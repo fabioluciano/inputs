@@ -4,7 +4,7 @@
       <v-row>
         <v-col>
           <h2 class="text-h2 grey--text text--darken-2 section-name">
-            Input Devices
+            Pointers
           </h2>
         </v-col>
       </v-row>
