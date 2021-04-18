@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <Header />
     <v-main class="grey lighten-3">
-      <v-container fill-height fluid>
+      <v-container fluid>
         <v-row align="center" justify="center">
           <v-col cols="11">
             <slot />
