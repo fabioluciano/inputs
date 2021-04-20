@@ -25,9 +25,9 @@ switch_socket:
   - MX
   - Choc
 images:
-  - /assets/images/keyboard/lily58/1.jpg
-  - /assets/images/keyboard/lily58/2.jpg
-  - /assets/images/keyboard/lily58/3.webp
+  - keyboard/lily58/1.jpg
+  - keyboard/lily58/2.jpg
+  - keyboard/lily58/3.webp
 components:
   - component: PCB
     required: true

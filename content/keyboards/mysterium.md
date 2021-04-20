@@ -23,9 +23,9 @@ details:
 switch_socket:
   - MX
 images:
-  - /assets/images/keyboard/mysterium/1.jpg
-  - /assets/images/keyboard/mysterium/2.jpg
-  - /assets/images/keyboard/mysterium/3.jpg
+  - keyboard/mysterium/1.jpg
+  - keyboard/mysterium/2.jpg
+  - keyboard/mysterium/3.jpg
 components:
   - component: Mysterium Keyboard PCB
     revision:

@@ -52,7 +52,9 @@ query {
         switch_socket {
           id,
           title
-        }
+        },
+        images,
+        content
       }
     }
   }
