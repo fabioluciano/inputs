@@ -10,9 +10,9 @@
       </v-row>
       <v-row>
         <v-col
-          cols="12"
           sm="3"
           md="3"
+          lg="3"
           v-for="edge in $page.keyboards.edges"
           :key="edge.node.id"
         >

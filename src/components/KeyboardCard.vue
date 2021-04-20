@@ -15,7 +15,7 @@
       >
         <v-card-title v-text="keyboard.title" />
       </v-img>
-      <v-card-text class="text--primary" v-html="keyboard.content" />
+      <v-card-subtitle v-html="keyboard.content" />
     </v-card>
   </v-hover>
 </template>
