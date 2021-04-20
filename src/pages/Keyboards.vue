@@ -14,7 +14,7 @@
           sm="3"
           md="3"
           v-for="edge in $page.keyboards.edges"
-          :key="edge.node.title"
+          :key="edge.node.id"
         >
           <KeyboardCard :keyboard="edge.node" />
         </v-col>
@@ -34,6 +34,8 @@ query {
           id,
           title
         }
+        images,
+        content
       }
     }
   }

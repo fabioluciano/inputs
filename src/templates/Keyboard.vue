@@ -44,8 +44,7 @@
               </v-tab>
               <v-tab
                 v-if="
-                  $page.keyboard.diy_kits &&
-                  $page.keyboard.diy_kits.length > 0
+                  $page.keyboard.diy_kits && $page.keyboard.diy_kits.length > 0
                 "
                 href="#diy_kits"
               >
@@ -86,8 +85,7 @@
               </v-tab-item>
               <v-tab-item
                 v-if="
-                  $page.keyboard.diy_kits &&
-                    $page.keyboard.diy_kits.length > 0
+                  $page.keyboard.diy_kits && $page.keyboard.diy_kits.length > 0
                 "
                 class="py-5"
                 value="diy_kits"
