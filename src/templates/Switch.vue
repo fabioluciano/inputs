@@ -26,16 +26,49 @@
           </v-card>
         </v-col>
       </v-row>
+      <v-row>
+        <v-col>
+          <radar-chart :chartData="dataCoin" />
+          </v-col>
+      </v-row>
     </v-container>
   </Layout>
 </template>
 
 <script>
+import RadarChart from "~/components/RadarChart.vue";
+
 export default {
-  components: {},
+  components: {
+    RadarChart,
+  },
   metaInfo() {
     return {
       title: "Switch - " + this.$page.switch.title,
+    };
+  },
+  data: function() {
+    return {
+      dataCoin: {
+        labels: [
+          "Actuation Force",
+          "Pre Travel",
+          "Total Travel"
+        ],
+        datasets: [
+          {
+            label: "My Second Dataset",
+            data: [55, 0.2, 2],
+            fill: true,
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgb(54, 162, 235)",
+            pointBackgroundColor: "rgb(54, 162, 235)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgb(54, 162, 235)",
+          },
+        ],
+      },
     };
   },
 };
