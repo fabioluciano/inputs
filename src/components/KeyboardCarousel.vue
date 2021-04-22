@@ -1,10 +1,10 @@
 <template>
-  <v-responsive :max-height="height">
-    <v-carousel cycle class="rounded-xl" :height="height">
+  <v-responsive>
+    <v-carousel cycle class="rounded-xl">
       <v-carousel-item v-for="(item, i) in $page.keyboard.images" :key="i">
         <v-img
-          :src="require(`!!assets-loader!@images/${item}`)"
-          :max-height="height"
+          :src="require(`!!assets-loader?height=500!@images/${item}`)"
+          contain
         />
       </v-carousel-item>
     </v-carousel>

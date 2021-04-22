@@ -13,6 +13,7 @@ initial_force: 30
 actuation_force: 45
 actuation_force_variance: 15
 rgb_version: true
+datasheet_url: https://www.cherrymx.de/_Resources/Persistent/dd13687543d0fd3d681405f7b556dd621164be96/cherry_mx_low_profile_rgb_speed.pdf
+images: 
+  - switches/cherry-mx-low-speed/1.png
 ---
-
-Content

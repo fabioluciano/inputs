@@ -13,6 +13,8 @@ initial_force: 30
 actuation_force: 60
 actuation_force_variance: 20
 rgb_version: true
+datasheet_url: https://www.cherrymx.de/_Resources/Persistent/8945e4291a811c540f5c3e1ae4b3fc47e4011a8a/EN_CHERRY_MX_SILENT_BLACK.pdf
+images: 
+  - switches/cherry-mx-silent-black/1.png
+  - switches/cherry-mx-silent-black/2.png
 ---
-
-Content
