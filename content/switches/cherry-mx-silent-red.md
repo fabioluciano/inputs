@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Silent Red
+title: MX Silent Red
 profile: normal
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: linear
 durability: 50000000

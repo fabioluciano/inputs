@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Brown
+title: MX Brown
 profile: normal
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: tactile
 durability: 100000000

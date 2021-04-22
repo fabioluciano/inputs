@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Green
+title: MX Green
 profile: normal
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: clicky
 durability: 50000000
