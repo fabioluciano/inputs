@@ -73,6 +73,8 @@ query Switch ($id: ID!) {
     pressure_point_force,
     pressure_point_force_variance,
     rgb_version,
+    datasheet_url,
+    images,
     path
   }
 }

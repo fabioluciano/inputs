@@ -13,6 +13,7 @@ initial_force: 30
 actuation_force: 80
 actuation_force_variance: 25
 rgb_version: true
+datasheet_url: https://cdn.sparkfun.com/datasheets/Components/Switches/MX%20Series.pdf
+images: 
+  - switches/cherry-mx-grey/1.png
 ---
-
-Content

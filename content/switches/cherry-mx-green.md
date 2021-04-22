@@ -15,6 +15,7 @@ actuation_force_variance: 20
 pressure_point_force: 80
 pressure_point_force_variance: 20
 rgb_version: true
+datasheet_url: https://www.cherrymx.de/_Resources/Persistent/aa31c11f193a199eea05c8897d9decc539ce9b7f/EN_CHERRY_MX_GREEN.pdf
+images: 
+  - switches/cherry-mx-green/1.png
 ---
-
-Content

@@ -30,7 +30,7 @@
         {{ groupName | capitalize }}
       </h3>
       <v-row>
-        <v-col sm="3" md="3" v-for="item in group" :key="item.id">
+        <v-col sm="2" md="2" v-for="item in group" :key="item.id">
           <SwitchCard :switch_obj="item" />
         </v-col>
       </v-row>
@@ -67,6 +67,8 @@ query {
         initial_force,
         actuation_force,
         rgb_version,
+        datasheet_url,
+        images,
         path
       }
     }

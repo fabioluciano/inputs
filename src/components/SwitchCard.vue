@@ -1,22 +1,28 @@
 <template>
-  <v-card outlined :to="`${switch_obj.path}`" elevation="2">
-    <v-card-title>
-      {{ switch_obj.title }}
-    </v-card-title>
+  <v-hover>
+    <v-card
+      rounded="xl"
+      :to="`${switch_obj.path}`"
+      slot-scope="{ hover }"
+      :class="`elevation-${hover ? 4 : 1}`"
+    >
+      <v-img
+        :src="
+          require(`!!assets-loader?width=400!@images/${
+            switch_obj.images[0]
+          }`)
+        "
+        :max-width="300"
+        contain
+        class="black--text align-end"
+        v-if="switch_obj.images.length > 0"
+      >
+      </v-img>
+      <v-card-title v-text="switch_obj.title" />
 
-    <v-card-text>
-      <v-container>
-        <v-row dense>
-          <v-col>Type</v-col>
-          <v-col>{{ switch_obj.type.title }}</v-col>
-        </v-row>
-        <v-row dense>
-          <v-col>Brand</v-col>
-          <v-col>{{ switch_obj.brand.title }}</v-col>
-        </v-row>
-      </v-container>
-    </v-card-text>
-  </v-card>
+      <v-card-subtitle v-html="switch_obj.content" />
+    </v-card>
+  </v-hover>
 </template>
 
 <script>

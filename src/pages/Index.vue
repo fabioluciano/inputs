@@ -28,9 +28,8 @@
       </v-row>
       <v-row>
         <v-col
-          cols="12"
-          sm="3"
-          md="3"
+          sm="2"
+          md="2"
           v-for="item in $page.switches.edges"
           :key="item.node.title"
         >
@@ -82,6 +81,8 @@ query {
         initial_force,
         actuation_force,
         rgb_version,
+        datasheet_url,
+        images,
         path
       }
     }

@@ -4,7 +4,7 @@
     <v-main class="grey lighten-3">
       <v-container fluid>
         <v-row align="center" justify="center">
-          <v-col cols="11">
+          <v-col>
             <slot />
           </v-col>
         </v-row>
