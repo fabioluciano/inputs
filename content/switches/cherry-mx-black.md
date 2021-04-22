@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Black
+title: MX Black
 profile: normal
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: linear
 durability: 100000000

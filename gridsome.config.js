@@ -8,7 +8,7 @@ module.exports = {
   },
   templates: {
     Keyboard: "/keyboards/:title",
-    Switch: "/switches/:title",
+    Switch: "/switches/:brand-:title",
     SwitchType: "/switch-types/:title",
     Pointer: "/pointer/:title",
   },

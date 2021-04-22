@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Grey
+title: MX Grey
 profile: normal
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: tactile
 durability: 50000000

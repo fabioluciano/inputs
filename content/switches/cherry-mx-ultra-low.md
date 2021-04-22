@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Ultra Low Profile
+title: MX Ultra Low Profile
 profile: ultra low
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: clicky
 durability: 15000000

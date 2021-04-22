@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Low Profile Speed
+title: MX Low Profile Speed
 profile: low
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: linear
 durability: 50000000

@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Blue
+title: MX Blue
 profile: normal
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: clicky
 durability: 100000000
@@ -17,6 +17,6 @@ pressure_point_force_variance: 15
 rgb_version: true
 datasheet_url: https://www.cherrymx.de/_Resources/Persistent/a531cb6598bc849cbcf131fd7a31814282b74545/EN_CHERRY_MX_BLUE.pdf
 images: 
-  - switches/cherry-mx-brown/1.png
-  - switches/cherry-mx-brown/2.png
+  - switches/cherry-mx-blue/1.png
+  - switches/cherry-mx-blue/2.png
 ---

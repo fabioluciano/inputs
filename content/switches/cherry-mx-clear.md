@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Clear
+title: MX Clear
 profile: normal
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: tactile
 durability: 50000000

@@ -1,7 +1,7 @@
 ---
-title: Cherry MX Speed Silver
+title: MX Speed Silver
 profile: normal
-brand: Cherry MX
+brand: Cherry
 socket: MX
 type: linear
 durability: 100000000
