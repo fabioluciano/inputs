@@ -69,6 +69,13 @@ buildlogs:
     author:
       name: Naoki Katahira
       url: https://github.com/kata0510
+  - url: https://imgur.com/gallery/eM0zWS9
+    revision: Pro
+    language: english
+    type: gallery
+    author:
+      name: Finestnothing
+      url: https://imgur.com/user/Finestnothing
   - url: https://www.youtube.com/watch?v=kRrzfWv39G4&t=8308s
     revision: Pro
     language: english
