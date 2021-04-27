@@ -9,27 +9,30 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="12">
-          <v-card>
-            <v-container>
+        <v-col>
+          {{ $page.switch }}
+          <v-container>
+            <v-card class="pa-2 rounded-xl">
               <v-row>
-                <v-col>
-                  <dl class="row">
-                    <template v-for="(value, key) in $page.switch">
-                      <dt class="col-sm-3">{{ key }}</dt>
-                      <dd class="col-sm-9">{{ value }}</dd>
-                    </template>
-                  </dl>
+                <v-col v-if="$page.switch.images.length > 0" cols="6">
+                  <v-img
+                    :src="
+                      require(`!!assets-loader?width=400&height=400!@images/${
+                        $page.switch.images[0]
+                      }`)
+                    "
+                    max-height="400"
+                    max-width="400"
+                  >
+                  </v-img>
+                </v-col>
+                <v-col cols="6">
+                  <radar-chart :chartData="chartData" />
                 </v-col>
               </v-row>
-            </v-container>
-          </v-card>
+            </v-card>
+          </v-container>
         </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <radar-chart :chartData="dataCoin" />
-          </v-col>
       </v-row>
     </v-container>
   </Layout>
@@ -47,18 +50,34 @@ export default {
       title: "Switch - " + this.$page.switch.title,
     };
   },
-  data: function() {
-    return {
-      dataCoin: {
-        labels: [
-          "Actuation Force",
-          "Pre Travel",
-          "Total Travel"
-        ],
+  computed: {
+    chartData() {
+      let name = this.$page.switch.title;
+      let actuation_force = this.$page.switch.actuation_force;
+      let pre_travel = this.$page.switch.pre_travel;
+      let actuator_travel = this.$page.switch.actuator_travel;
+
+      return this.chartDataMount(
+        name,
+        actuation_force,
+        pre_travel,
+        actuator_travel
+      );
+    },
+  },
+  methods: {
+    chartDataMount: function(
+      name,
+      actuation_force,
+      pre_travel,
+      actuator_travel
+    ) {
+      return {
+        labels: ["Actuation Force", "Pre Travel", "Total Travel"],
         datasets: [
           {
-            label: "My Second Dataset",
-            data: [55, 0.2, 2],
+            label: name,
+            data: [actuation_force, pre_travel, actuator_travel],
             fill: true,
             backgroundColor: "rgba(54, 162, 235, 0.2)",
             borderColor: "rgb(54, 162, 235)",
@@ -68,8 +87,8 @@ export default {
             pointHoverBorderColor: "rgb(54, 162, 235)",
           },
         ],
-      },
-    };
+      };
+    },
   },
 };
 </script>
